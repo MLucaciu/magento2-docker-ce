@@ -29,7 +29,7 @@ Please follow the next steps:
 
 7. Add the next text in hosts file of your OS system:
 
-`172.21.0.5 sandbox.commerce.local`
+`172.21.0.3 sandbox.commerce.local`
 
 8. Open the browser and type the next link: http://sandbox.commerce.local/
 
