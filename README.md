@@ -53,6 +53,7 @@ Please follow the next steps:
 
 ## Use Redis and Memcached for cache.
 Add the following to app/etc/env.php 
+```
 `   'session' =>
         array (
             'save' => 'memcached',
@@ -80,4 +81,5 @@ Add the following to app/etc/env.php
         ]
     ],
 `
+```
 
