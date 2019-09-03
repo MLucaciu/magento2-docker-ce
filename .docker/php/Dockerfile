@@ -8,7 +8,7 @@ RUN apt-get update \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libpng-dev \
-    mysql-client \
+    mariadb-client \
     libxslt1-dev
 
 RUN docker-php-ext-configure gd \
@@ -46,7 +46,7 @@ RUN curl -sS https://getcomposer.org/installer | \
 RUN pecl install -o -f xdebug-2.6.1 && docker-php-ext-enable xdebug
 
 # Install Mysql Client
-RUN apt-get -y install mysql-client
+RUN apt-get -y install mariadb-client
 
 # Install Mailcatcher
 RUN apt-get update
@@ -57,14 +57,14 @@ RUN apt-get -y install build-essential ruby-full libsqlite3-dev &&\
 # Install nano
 RUN apt-get install -y nano
 
-ENV PHP_MEMORY_LIMIT 2G
+ENV PHP_MEMORY_LIMIT 4G
 ENV PHP_PORT 9000
 ENV PHP_PM dynamic
 ENV PHP_PM_MAX_CHILDREN 10
 ENV PHP_PM_START_SERVERS 4
 ENV PHP_PM_MIN_SPARE_SERVERS 2
 ENV PHP_PM_MAX_SPARE_SERVERS 6
-ENV APP_MAGE_MODE default
+ENV APP_MAGE_MODE developer
 
 COPY conf/www.conf /usr/local/etc/php-fpm.d/
 COPY conf/php.ini /usr/local/etc/php/
