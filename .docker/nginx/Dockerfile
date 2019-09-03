@@ -1,5 +1,5 @@
 FROM nginx:1.11
-
+MAINTAINER Victor Todoran "victorvulpeatodoran@gmail.com"
 
 ENV PHP_HOST phpfpm
 ENV PHP_PORT 9000
